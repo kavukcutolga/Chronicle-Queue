@@ -465,7 +465,9 @@ public class VanillaChronicle implements Chronicle {
                 finished = false;
 
                 return true;
-            } catch (IOException ioe) {
+            } catch (FileNotFoundException ex){
+                return false;
+            } catch(IOException ioe) {
                 throw new AssertionError(ioe);
             }
         }
